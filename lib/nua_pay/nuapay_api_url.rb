@@ -1,2 +1,17 @@
-path = File.join(File.dirname(File.expand_path(__FILE__)), 'lib/nua_pay/nua_pay_api_urls.yml')
-NUAPAY_API = YAML.load_file( path )
+NUAPAY_API = {
+  MANDATES:                 '/mandates/',
+  SCHEMES:                  'schemes/',
+  ACTIVATE:                 '/activate',
+  CANCEL:                   '/cancel',
+  DIRECT_DEBITS:            '/directdebits/',
+  DIRECT_DEBITS_LIST:       'directdebits/',
+  REVOKE:                   '/revoke',
+  REVOKE_ALL_DIRECT_DEBITS: '/revokealldirectdebits',
+  REPRESENT:                '/represent',
+  PAYMENT_SCHEDULES:        '/paymentschedules/',
+  PAYMENT_SCHEDULES_LIST:   'paymentschedules/',
+  IBAN:                     'iban/',
+  VALIDATE:                 'validate/',
+  ACCOUNTS:                 'accounts/',
+  LIST:                     'list/',
+}.with_indifferent_access

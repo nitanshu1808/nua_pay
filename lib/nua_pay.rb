@@ -1,4 +1,4 @@
-require 'yaml'
+require "active_support/core_ext/hash/indifferent_access"
 require "nua_pay/version"
 require "nua_pay/nuapay_api_url"
 require "nua_pay/base"
