@@ -28,5 +28,3 @@ class NuaPay::MandateInfo < NuaPay
   end
 
 end
-
-# data = { "debtor": { "name": "Nitanshu Rehani"},  "debtorAccount": { "iban": "GB95SELN00999960724146",  "bic": "SELNGB21" }, "creditorAccount": { "iban": "GB95SELN00999960724146", "bic": "SELNGB21" } }.with_indifferent_access

@@ -1,13 +1,10 @@
 class NuaPay::PaymentSchedule < NuaPay
 
-# data = { "paymentFrequency":"DAILY", "paymentType":"FIXED_LENGTH", "startDate":(Date.today + 5.days).strftime, "numberOfPayments":2, "paymentAmount":9.90, "firstPaymentAmount":1.10, "lastPaymentAmount":9.90, "remittanceInformation":"remittanceInformation", "twoPaymentsSamePeriod":true, "settlementDateShift": true }.with_indifferent_access
   def create( mandate_id, data={} )
     validate_post_params( data )
     url = mandate_url( mandate_id ) +  NUAPAY_API['PAYMENT_SCHEDULES']
     get_response( url , {request_type: :post}, data )
   end
-
-# data  =  { "paymentFrequency":"DAILY", "paymentType":"FIXED_LENGTH", "startDate":(Date.today + 5.days).strftime, "numberOfPayments":2, "paymentAmount":9.90, "firstPaymentAmount":1.10, "lastPaymentAmount":9.90, "remittanceInformation":"remittanceInformation", "twoPaymentsSamePeriod":true, "settlementDateShift": true, "mandate": {"debtor": {"name": "Debtor Name"}, "debtorAccount": {"iban": "GB94SELN00999976543215"}, "creditorAccount": {"iban": "GB95SELN00999960724146"} } }
 
   def create_mandate_with_payment_schedule
     validate_payment_schedule_with_mandate_post_params( data )

@@ -2,8 +2,6 @@
 # once the borrower has signed an authorisation via signed mandates.
 class NuaPay::DirectDebitInfo < NuaPay
 
-# data = {"requestedCollectionDate": "2019-06-08", "paymentAmount": 5000.01, "settlementDateShift": true }
-
   def create( mandate_id, data={} )
     validate_direct_debit_post_params( data )
 
@@ -65,4 +63,3 @@ class NuaPay::DirectDebitInfo < NuaPay
   end
 end
 
-# data  =  {"requestedCollectionDate": (Date.today + 2.days).strftime, "paymentAmount": 5000.01, "settlementDateShift": true, "mandate": {"debtor": {"name": "Debtor Name"}, "debtorAccount": {"iban": "GB94SELN00999976543215"}, "creditorAccount": {"iban": "GB95SELN00999960724146"} } }
