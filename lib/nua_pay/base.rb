@@ -5,7 +5,7 @@ module NuaPay
                   method:  additional_options[:request_type] || :get,
                   url:     url,
                   user:    ENV['NUAPAY_API_KEY'],
-                  payload: (params.to_json if params.compact.present?),
+                  payload: (params.to_json),
                   headers: { content_type: 'application/json'}
                 })
 
