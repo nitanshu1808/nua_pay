@@ -39,7 +39,8 @@ In order to use the, You need to have the following as environment variables tha
 
 ## Development
 1. In order to create a mandate use the following:
-params = '{
+
+* params = '{
    "debtor": {
    "name": "Debtor Name",
    "address": {
@@ -84,7 +85,7 @@ params = '{
 
 2. In order to create a direct debit use the following:
 
-params = '{
+* params = '{
     "requestedCollectionDate": "2015-08-12",
     "paymentAmount": 5000.01,
     "endToEndId": "1234567876543234567",
