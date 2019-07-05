@@ -1,43 +1,101 @@
 # NuaPay
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nua_pay`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to the nua pay new gem!
 
-TODO: Delete this and the text above, and describe your gem
+This gem provides classes and methods required to operate with
+1. Mandate,
+2. Direct Debit &
+3. Payment Schedule
+4. Account
+
 
 ## Installation
 
-Add this line to your application's Gemfile:
+In order to install this gem,
 
-```ruby
-gem 'nua_pay'
-```
+include the line
+
+$ gem 'nua_pay', 'version', :git => "https://github.com/nitanshu1808/nua_pay.git"
 
 And then execute:
 
-    $ bundle
+$ bundle
 
 Or install it yourself as:
 
-    $ gem install nua_pay
+$ gem install nua_pay
 
 ## Usage
 
-TODO: Write usage instructions here
+In order to use the, You need to have the following as environment variables that will be provided by the Nua Pay https://nuapay.com
+
+1. NUAPAY_BASE_URL ('Example: https://sandbox.nuapay.com/'),
+2. NUAPAY_API_KEY,
+3. NUA_PAY_COMPANY_IBAN,
+4. NUA_PAY_CREDIT_SCHEME_ID,
+5. NUAPAY_IDENTIFIER &
+6. NUAPAY_SIGNED_KEY
+
 
 ## Development
+1. In order to create a mandate use the following:
+params = '{
+   "debtor": {
+   "name": "Debtor Name",
+   "address": {
+     "line1": "Debtor Address Line1",
+     "line2": "Debtor Address Line2",
+     "town": "Debtor Town",
+     "postCode": "123123",
+     "state": "Debtor State",
+     "country": "IE"
+    },
+   "language": "en",
+   "email": "debtor@email.com",
+   "phoneNumber": "0360123123123",
+   "mobileNumber": "0360321312312"
+   },
+   "mandateInfo": {
+     "mandateId": "tstMndtAA987",
+     "contractReference": "Contract Reference",
+     "signatureLocation": "Signature Location",
+     "signatureDate": "2015-07-21",
+     "electronicSignatureDetails": {
+       "authorizationMethod": "SMS_PASSWORD",
+       "authorizationToken": "1234",
+       "authorizationEmail": "debtor@email.com",
+       "authorizationMobileNumber": "0360321312312",
+       "ipAddress": "192.168.8.1",
+       "geographicLocation": "Geo Location"
+     },
+     "mandateType": "RCUR"
+   },
+   "debtorAccount": {
+     "iban": "GB94SELN00999976543215",
+     "bic": "SELNGB21"
+   },
+   "creditorAccount": {
+     "iban": "GB47SELN00999912345678",
+     "bic": "SELNGB21"
+   }
+ }'
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+=> NuaPay::MandateInfo.new.create( params )
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+2. In order to create a direct debit use the following:
+
+params = '{
+    "requestedCollectionDate": "2015-08-12",
+    "paymentAmount": 5000.01,
+    "endToEndId": "1234567876543234567",
+    "remittanceInformation": "Remittance Information",
+    "settlementDateShift": true
+ }'
+
+
+NuaPay::DirectDebitInfo.new.create( mandate_identifier, params )
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/nua_pay. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nitanshu1808]/nua_pay. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the NuaPay project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/nua_pay/blob/master/CODE_OF_CONDUCT.md).
