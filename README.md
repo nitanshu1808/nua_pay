@@ -94,7 +94,7 @@ In order to use the, You need to have the following as environment variables tha
  }'
 
 
-NuaPay::DirectDebitInfo.new.create( mandate_identifier, params )
+=> NuaPay::DirectDebitInfo.new.create( mandate_identifier, params )
 
 ## Contributing
 
