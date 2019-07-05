@@ -29,12 +29,12 @@ $ gem install nua_pay
 
 In order to use the, You need to have the following as environment variables that will be provided by the Nua Pay https://nuapay.com
 
-1. NUAPAY_BASE_URL ('Example: https://sandbox.nuapay.com/'),
-2. NUAPAY_API_KEY,
-3. NUA_PAY_COMPANY_IBAN,
-4. NUA_PAY_CREDIT_SCHEME_ID,
-5. NUAPAY_IDENTIFIER &
-6. NUAPAY_SIGNED_KEY
+1. NUAPAY_BASE_URL ( Example: https://sandbox.nuapay.com/),
+2. NUAPAY_API_KEY, ( Example: '1706683cf42317821ef5b9653c297ab4b126b338a3cf04e6cdf57510c20a9915b' )
+3. NUA_PAY_COMPANY_IBAN (Example: 'GB95SELN009999607241461'),
+4. NUA_PAY_CREDIT_SCHEME_ID (Example: 'GB40ZZZSDDSELN000000520146464FLEN'),
+5. NUAPAY_IDENTIFIER (Example: 'abxrxzll5bl') &
+6. NUAPAY_SIGNED_KEY (Example: 'c4500ba94a70a557c1649367c6df8e14a9a1ee3f2')
 
 
 ## Development
