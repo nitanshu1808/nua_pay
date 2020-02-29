@@ -24,5 +24,5 @@ Gem::Specification.new do |spec|
   spec.homepage         = "https://github.com/nitanshu1808/nua_pay"
   spec.add_dependency 'rails', '~> 5.0.0', '>= 5.0.0.1'
   spec.add_development_dependency "rest-client", "~> 2.0.0"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake", "~> 13.0"
 end

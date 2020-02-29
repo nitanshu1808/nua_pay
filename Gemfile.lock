@@ -99,7 +99,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.5.0)
+    rake (13.0.1)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -127,7 +127,7 @@ PLATFORMS
 
 DEPENDENCIES
   nua_pay!
-  rake (~> 10.0)
+  rake (~> 13.0)
   rest-client (~> 2.0.0)
 
 BUNDLED WITH
